@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
+    "express": "^4.21.1",
+    "moment": "^2.30.1",
+    "mongoose": "^8.8.3"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "dataset.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}

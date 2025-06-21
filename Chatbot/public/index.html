@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; }
+        .chat-container {
+            width: 400px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #fff;
+        }
+        .chat-header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .chat-log {
+            height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            background: #fafafa;
+        }
+        .chat-message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .chat-message.user {
+            background: #e1f5fe;
+            margin-left: auto;
+            text-align: right;
+        }
+        .chat-message.bot {
+            background: #e8f5e9;
+            margin-right: auto;
+            text-align: left;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+        .chat-input button {
+            padding: 10px;
+            border: none;
+            background: transparent;
+            color: #4CAF50;
+            cursor: pointer;
+            font-size: 24px;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+        .chat-input button:hover {
+            color: #45a049;
+        }
+        .typing-indicator {
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Typing animation for "..." */
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        .dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">Chat with Us</div>
+        <div class="chat-log" id="chat-log"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeydown="checkEnter(event)">
+            <button onclick="sendMessage()">→</button> <!-- Arrow symbol used here -->
+        </div>
+    </div>
+
+    <script>
+        // Display greeting message from bot when page loads
+        window.onload = function() {
+            const chatLog = document.getElementById('chat-log');
+            const greetingMessage = document.createElement('div');
+            greetingMessage.className = 'chat-message bot';
+            greetingMessage.textContent = 'Hey, I am your assistant to help you. Ask any query!';
+            chatLog.appendChild(greetingMessage);
+            chatLog.scrollTop = chatLog.scrollHeight;  // Auto scroll to the bottom
+        };
+
+        // Function to handle Enter key press
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();  // Call sendMessage function when Enter key is pressed
+            }
+        }
+
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (!userInput.trim()) return;
+
+            const chatLog = document.getElementById('chat-log');
+
+            // Display user's message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user';
+            userMessage.textContent = userInput;  // Display user's message
+            chatLog.appendChild(userMessage);
+
+            // Clear input
+            document.getElementById('userInput').value = '';
+
+            // Display typing animation
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'chat-message bot typing-indicator';
+            typingIndicator.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+            chatLog.appendChild(typingIndicator);
+            chatLog.scrollTop = chatLog.scrollHeight;  // Scroll to the bottom
+
+            try {
+                // Simulate delay before bot responds (1 second)
+                setTimeout(async () => {
+                    // Send message to the chatbot server
+                    const response = await fetch('http://localhost:3000/webhook', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: userInput })
+                    });
+                    const result = await response.json();
+
+                    // Remove the typing indicator
+                    chatLog.removeChild(typingIndicator);
+
+                    // Check if the response contains an email link
+                    const replyText = result.reply;
+                    const emailPattern = /developers\.lts@fix\.com/;
+                    if (emailPattern.test(replyText)) {
+                        // Make email clickable
+                        result.reply = replyText.replace(
+                            emailPattern,
+                            '<a href="mailto:developers.lts@fix.com">developers.lts@fix.com</a>'
+                        );
+                    }
+
+                    // Display bot's reply with innerHTML (to render HTML like <br>)
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'chat-message bot';
+                    botMessage.innerHTML = result.reply;  // Use innerHTML to render HTML tags
+                    chatLog.appendChild(botMessage);
+
+                    // Scroll to the bottom
+                    chatLog.scrollTop = chatLog.scrollHeight;
+                }, 1000);  // 1 second delay to simulate typing
+            } catch (error) {
+                console.error('Error:', error);
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'chat-message bot';
+                errorMessage.textContent = 'Error communicating with server.';
+                chatLog.appendChild(errorMessage);
+            }
+        }
+    </script>
+</body>
+</html>

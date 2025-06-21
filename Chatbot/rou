@@ -1,0 +1,99 @@
+const { findUserByTicketAndLTP } = require('./database');
+
+app.post('/webhook', async (req, res) => {
+    const message = req.body.message.toLowerCase();
+    const sessionId = req.sessionID;
+
+    const ticketNumber = extractTicketNumber(message);
+    const ltpNumber = extractLtpNumber(message);
+
+    if (ticketNumber) req.session.ticketNumber = ticketNumber;
+    if (ltpNumber) req.session.ltpNumber = ltpNumber;
+
+    // Check for specific query pattern "my ticket is <ticket> and ltp is <ltp>"
+    const ticketLtpPattern = /my ticket is (\w+) and ltp is (\w+)/i;
+    const ticketLtpMatch = message.match(ticketLtpPattern);
+
+    if (ticketLtpMatch) {
+        const ticket = ticketLtpMatch[1];
+        const ltp = ticketLtpMatch[2];
+
+        try {
+            const userResult = await findUserByTicketAndLTP(ticket, ltp);
+            if (userResult.success) {
+                res.json({ reply: `Hi ${userResult.name}, how can I assist you?` });
+            } else {
+                res.json({ reply: userResult.message });
+            }
+            return;
+        } catch (error) {
+            console.error('Error fetching user:', error);
+            res.json({ reply: 'Error processing your request. Please try again later.' });
+            return;
+        }
+    }
+
+    // Continue with existing logic if no special match is found
+    const result = await detectIntent(message, sessionId);
+    const response = handleResponse(result, message);
+    res.json({ reply: response });
+});
+
+
+
+
+
+
+
+    // // Check if it's a query for lost luggage with more details
+    // if (moreDetails) {
+    //     try {
+    //         const detailsResponse = await checkLuggageDetails(moreDetails);
+    //         res.json({ reply: detailsResponse });
+    //         return;
+    //     } catch (error) {
+    //         console.error('Error querying posters collection:', error);
+    //         res.json({ reply: 'Error querying the database. Please try again later.' });
+    //         return;
+    //     }
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /i want(?:\s+to)?(?:\s+file|\s+register|\s+submit|\s+lodge|)\s+(?:a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i need(?:\s+to)?(?:\s+file|\s+register|\s+submit|\s+lodge|)\s+(?:a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i have(?:\s+a|\s+|)(?:complain|complains|complaint|complaints|problem|problems|grievance|grievances|concern|concerns|issue|issues)\s+(?:to\s+report|)[\W\s]*/i,
+        /i need to(?:\s+report|)\s*(?:an\s+|a\s+|)(?:issue|issues|problem|problems|grievance|grievances|complain|complains|complaint|complaints)[\W\s]*/i,
+        /how can i(?:\s+file|\s+submit|\s+lodge|)\s+(?:a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /how do i(?:\s+file|\s+submit|\s+lodge|)\s+(?:a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /can i(?:\s+file|\s+register|\s+submit|\s+lodge|)\s+(?:a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i have(?:\s+a|\s+|)(?:problem|problems)(?:\s+to\s+report|)[\W\s]*/i,
+        /i want(?:\s+to)?\s+report(?:\s+a\s+|)(?:problem|problems|issue|issues|grievance|grievances|complain|complains|complaint|complaints)[\W\s]*/i,
+        /i need(?:\s+help|)\s+with(?:\s+a\s+|)(?:problem|problems|issue|issues|grievance|grievances|complain|complains|complaint|complaints)[\W\s]*/i,
+        /i would like to(?:\s+file|\s+submit|\s+lodge|)\s+(?:a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i have(?:\s+a|\s+|)(?:complain|complains|complaint|complaints|problem|problems|grievance|grievances|issue|issues)\s+to\s+report[\W\s]*/i,
+        /i want to(?:\s+file|\s+register|\s+submit|\s+lodge|)\s+(?:a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i need(?:\s+to)?\s+raise(?:\s+a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i need(?:\s+to)?\s+log(?:\s+a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i have(?:\s+a|\s+|)(?:complain|complains|complaint|complaints|problem|problems|grievance|grievances|issue|issues)\s+to file[\W\s]*/i,
+        /i need(?:\s+to)?\s+make(?:\s+a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i need(?:\s+to)?\s+submit(?:\s+a\s+|)(?:complain|complains|complaint|complaints|issue|issues|grievance|grievances|problem|problems)[\W\s]*/i,
+        /i got(?:\s+a|\s+|)(?:complain|complains|complaint|complaints|problem|problems|grievance|grievances|concern|concerns|issue|issues)[\W\s]*/i,
+        /complain[\W\s]*/i,
+        /complains[\W\s]*/i,
+        /complaint[\W\s]*/i,
+        /complaints[\W\s]*/i,
+        /issue[\W\s]*/i,
+        /issues[\W\s]*/i,
+        /problem[\W\s]*/i,
+        /problems[\W\s]*/i

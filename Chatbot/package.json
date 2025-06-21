@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "@google-cloud/dialogflow": "^6.13.0",
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "compromise": "^14.14.4",
+    "connect-mongo": "^5.1.0",
+    "connect-redis": "^8.0.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "cosine-similarity": "^1.0.1",
+    "dialogflow": "^1.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "fast-levenshtein": "^3.0.0",
+    "ioredis": "^5.4.2",
+    "jsonwebtoken": "^9.0.2",
+    "lemmatizer": "^0.0.1",
+    "memorystore": "^1.6.7",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "natural": "^8.0.1",
+    "node-cache": "^5.1.2",
+    "node-fetch": "^2.7.0",
+    "node-nlp": "^5.0.0-alpha.5",
+    "redis": "^4.7.0",
+    "simple-statistics": "^7.8.7",
+    "stopword": "^3.1.4",
+    "uuid": "^11.0.5",
+    "wordnet": "^2.0.0"
+  }
+}

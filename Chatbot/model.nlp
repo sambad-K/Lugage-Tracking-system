@@ -1,0 +1,505 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "have,i,lost,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "have,i,lost,luggag,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "bag,i,lost,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "luggag,miss": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "bag,miss": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "lost,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "miss,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "baggag,lost": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "lost,suitcas": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "miss,suitcas": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "ca,find,i,luggag,my,not": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "bag,ca,find,my,not": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "ca,find,i,my,not,suitcas": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "luggag,misplac,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "bag,left,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "left,luggag,my": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "left,my,suitcas": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "have,i,lost": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "airport,at,lost,luggag,my,the": {
+            "intent": "lostItem",
+            "domain": "default"
+          },
+          "bag,ca,locat,my,not": {
+            "intent": "lostItem",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "lostItem": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "i have lost my",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "i have lost my luggage",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "i lost my bag",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "missing luggage",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "missing bag",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "lost my",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "missing my",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "lost baggage",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "lost suitcase",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "missing suitcase",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "i can't find my luggage",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "can't find my bag",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "i can't find my suitcase",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "misplaced my luggage",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "left my bag",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "left my luggage",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "left my suitcase",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "i have lost",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "lost my luggage at the airport",
+            "intent": "lostItem"
+          },
+          {
+            "domain": "default",
+            "utterance": "can't locate my bag",
+            "intent": "lostItem"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "i": 1,
+              "have": 1,
+              "lost": 1,
+              "my": 1,
+              "luggag": 1,
+              "bag": 1,
+              "miss": 1,
+              "baggag": 1,
+              "suitcas": 1,
+              "ca": 1,
+              "not": 1,
+              "find": 1,
+              "misplac": 1,
+              "left": 1,
+              "at": 1,
+              "the": 1,
+              "airport": 1,
+              "locat": 1
+            },
+            "intents": {
+              "lostItem": 1
+            },
+            "intentFeatures": {
+              "lostItem": {
+                "i": 1,
+                "have": 1,
+                "lost": 1,
+                "my": 1,
+                "luggag": 1,
+                "bag": 1,
+                "miss": 1,
+                "baggag": 1,
+                "suitcas": 1,
+                "ca": 1,
+                "not": 1,
+                "find": 1,
+                "misplac": 1,
+                "left": 1,
+                "at": 1,
+                "the": 1,
+                "airport": 1,
+                "locat": 1
+              }
+            },
+            "featuresToIntent": {
+              "i": [
+                "lostItem"
+              ],
+              "have": [
+                "lostItem"
+              ],
+              "lost": [
+                "lostItem"
+              ],
+              "my": [
+                "lostItem"
+              ],
+              "luggag": [
+                "lostItem"
+              ],
+              "bag": [
+                "lostItem"
+              ],
+              "miss": [
+                "lostItem"
+              ],
+              "baggag": [
+                "lostItem"
+              ],
+              "suitcas": [
+                "lostItem"
+              ],
+              "ca": [
+                "lostItem"
+              ],
+              "not": [
+                "lostItem"
+              ],
+              "find": [
+                "lostItem"
+              ],
+              "misplac": [
+                "lostItem"
+              ],
+              "left": [
+                "lostItem"
+              ],
+              "at": [
+                "lostItem"
+              ],
+              "the": [
+                "lostItem"
+              ],
+              "airport": [
+                "lostItem"
+              ],
+              "locat": [
+                "lostItem"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "i",
+                "have",
+                "lost",
+                "my",
+                "luggag",
+                "bag",
+                "miss",
+                "baggag",
+                "suitcas",
+                "ca",
+                "not",
+                "find",
+                "misplac",
+                "left",
+                "at",
+                "the",
+                "airport",
+                "locat"
+              ],
+              "intents": [
+                "lostItem"
+              ],
+              "perceptrons": [
+                [
+                  -0.1315585821866989,
+                  0.23637142777442932,
+                  4.4178876876831055,
+                  0.2457554042339325,
+                  0.24475343525409698,
+                  0.2595072090625763,
+                  4.491042137145996,
+                  0.4269556701183319,
+                  0.3164840638637543,
+                  1.711625337600708,
+                  1.711625337600708,
+                  0.9142111539840698,
+                  4.236919403076172,
+                  4.223687171936035,
+                  -0.05540984869003296,
+                  -0.05540984869003296,
+                  -0.05540984869003296,
+                  0.7972687482833862,
+                  9.54422542101639
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "i have lost my"
+      ],
+      [
+        "en",
+        "i have lost my luggage"
+      ],
+      [
+        "en",
+        "i lost my bag"
+      ],
+      [
+        "en",
+        "missing luggage"
+      ],
+      [
+        "en",
+        "missing bag"
+      ],
+      [
+        "en",
+        "lost my"
+      ],
+      [
+        "en",
+        "missing my"
+      ],
+      [
+        "en",
+        "lost baggage"
+      ],
+      [
+        "en",
+        "lost suitcase"
+      ],
+      [
+        "en",
+        "missing suitcase"
+      ],
+      [
+        "en",
+        "i can't find my luggage"
+      ],
+      [
+        "en",
+        "can't find my bag"
+      ],
+      [
+        "en",
+        "i can't find my suitcase"
+      ],
+      [
+        "en",
+        "misplaced my luggage"
+      ],
+      [
+        "en",
+        "left my bag"
+      ],
+      [
+        "en",
+        "left my luggage"
+      ],
+      [
+        "en",
+        "left my suitcase"
+      ],
+      [
+        "en",
+        "i have lost"
+      ],
+      [
+        "en",
+        "lost my luggage at the airport"
+      ],
+      [
+        "en",
+        "can't locate my bag"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

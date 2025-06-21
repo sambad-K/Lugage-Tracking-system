@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.About {
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.head h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.developers {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.developer_card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.developer_card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.developer_photo {
+  margin-bottom: 15px;
+}
+
+.hancy_haru {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #3a84ec;
+}
+
+.role {
+  color: #333;
+}
+
+.role p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.role h3 {
+  font-size: 18px;
+  color: #007bff;
+  margin-top: 5px;
+}

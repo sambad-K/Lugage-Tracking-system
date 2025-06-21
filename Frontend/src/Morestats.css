@@ -1,0 +1,92 @@
+.morestats-container {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .morestats-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .morestats-summary {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .chart-container {
+    max-width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .chart-section {
+    margin-top: 40px;
+  }
+  
+  .chart-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .morestats-footer {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px;
+  }
+  
+  /* Hover effects */
+  .summary-item:hover,
+  .chart-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .summary-item:hover {
+    color: #0056b3;
+  }
+  
+  /* Additional animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .morestats-container {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .chart-section {
+    animation: slideUp 1s ease-in-out;
+  }
+  
