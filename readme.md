@@ -226,10 +226,9 @@ Other Tools:
 
 ---
 
-### NLP and Backend Processing
+### NLP Pattern
 <p align="center">
   <img src="assets/NLP_Regex.png" width="500"/>
-  <img src="assets/Nodemailer.png" width="500"/>
 </p>
 
 --------------------
