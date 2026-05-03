@@ -128,9 +128,9 @@ Database:
 
 NLP:
 - Natural (Node.js NLP library)
+- Trained through scratch through standard NLP processes
 
-Chatbot:
-- Dialogflow
+
 
 Other Tools:
 - Nodemailer
@@ -152,8 +152,7 @@ Other Tools:
 
 ## Limitations
 - Uses synthetic dataset instead of real airport data
-- Chatbot is rule-based and not fully AI-driven
-- Some inaccuracies due to stemming errors
+- Some inaccuracies due to stemming errors on chatbot
 
 ---
 
@@ -164,27 +163,7 @@ Other Tools:
 - Improved NLP accuracy
 
 ---
-
-## Contributors
-- Lokendra Joshi
-- Raghabendra Chaudhary
-- Sambad Khatiwada
-- Santu Jhankri Magar
-
----
-
-## Academic Information
-- Institution: Himalaya College of Engineering
-- Affiliation: Tribhuvan University
-- Department: Electronics and Computer Engineering
-- Year: 2025
-
----
-
-## License
-This project is developed for academic purposes.
-
 ---
 
 ## Contact
-For queries or collaboration, please contact the contributors.
+For queries contact : sambadkhatiwada939@gmail.com
