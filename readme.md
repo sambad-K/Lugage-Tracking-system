@@ -167,71 +167,71 @@ Other Tools:
 ## Screenshots
 
 ### Home Page
-![Home Page](assets/Home_Page.png)
+<p align="center">
+  <img src="assets/Home_Page.png" width="700"/>
+</p>
 
 ---
 
 ### Report Lost Luggage
-![Report Lost Luggage](assets/Report_Lost_Luggage.png)
+<p align="center">
+  <img src="assets/Report_Lost_Luggage.png" width="700"/>
+</p>
 
 ---
 
 ### Post Found Luggage
-![Post Found Luggage](assets/Post_Found_Luggage.png)
+<p align="center">
+  <img src="assets/Post_Found_Luggage.png" width="700"/>
+</p>
 
 ---
 
 ### Post Page
-![Post Page](assets/Post_Page.png)
+<p align="center">
+  <img src="assets/Post_Page.png" width="700"/>
+</p>
 
 ---
 
 ### Admin Login
-![Admin Login](assets/Admin_Login_Page.png)
+<p align="center">
+  <img src="assets/Admin_Login_Page.png" width="500"/>
+</p>
 
 ---
 
 ### Admin Dashboard Statistics
+<p align="center">
+  <img src="assets/Stats1_On_Admin.png" width="400"/>
+  <img src="assets/Stats2_On_Admin.png" width="400"/>
+</p>
 
-#### Stats View 1
-![Stats 1](assets/Stats1_On_Admin.png)
-
-#### Stats View 2
-![Stats 2](assets/Stats2_On_Admin.png)
-
-#### Stats View 3
-![Stats 3](assets/Stats3_On_Admin.png)
+<p align="center">
+  <img src="assets/Stats3_On_Admin.png" width="400"/>
+</p>
 
 ---
 
 ### Chatbot Interaction
+<p align="center">
+  <img src="assets/Chat1.png" width="350"/>
+  <img src="assets/Chat2.png" width="350"/>
+</p>
 
-#### Chat Example 1
-![Chat 1](assets/Chat1.png)
-
-#### Chat Example 2
-![Chat 2](assets/Chat2.png)
-
-#### Chat Example 3
-![Chat 3](assets/Chat3.png)
-
-#### Chat Example 4
-![Chat 4](assets/Chat4.png)
+<p align="center">
+  <img src="assets/Chat3.png" width="350"/>
+  <img src="assets/Chat4.png" width="350"/>
+</p>
 
 ---
 
 ### NLP and Backend Processing
+<p align="center">
+  <img src="assets/NLP_Regex.png" width="500"/>
+  <img src="assets/Nodemailer.png" width="500"/>
+</p>
 
-#### Regex Processing
-![NLP Regex](assets/NLP_Regex.png)
-
-#### Email Service (Nodemailer)
-![Nodemailer](assets/Nodemailer.png)
-
----
-
-### Additional Screenshot
-![Additional](assets/Screenshot%202026-05-03%2010580.png)
 --------------------
 ## Contact
 For queries contact : sambadkhatiwada939@gmail.com
