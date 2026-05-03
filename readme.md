@@ -164,6 +164,74 @@ Other Tools:
 
 ---
 ---
+## Screenshots
 
+### Home Page
+![Home Page](assets/Home_Page.png)
+
+---
+
+### Report Lost Luggage
+![Report Lost Luggage](assets/Report_Lost_Luggage.png)
+
+---
+
+### Post Found Luggage
+![Post Found Luggage](assets/Post_Found_Luggage.png)
+
+---
+
+### Post Page
+![Post Page](assets/Post_Page.png)
+
+---
+
+### Admin Login
+![Admin Login](assets/Admin_Login_Page.png)
+
+---
+
+### Admin Dashboard Statistics
+
+#### Stats View 1
+![Stats 1](assets/Stats1_On_Admin.png)
+
+#### Stats View 2
+![Stats 2](assets/Stats2_On_Admin.png)
+
+#### Stats View 3
+![Stats 3](assets/Stats3_On_Admin.png)
+
+---
+
+### Chatbot Interaction
+
+#### Chat Example 1
+![Chat 1](assets/Chat1.png)
+
+#### Chat Example 2
+![Chat 2](assets/Chat2.png)
+
+#### Chat Example 3
+![Chat 3](assets/Chat3.png)
+
+#### Chat Example 4
+![Chat 4](assets/Chat4.png)
+
+---
+
+### NLP and Backend Processing
+
+#### Regex Processing
+![NLP Regex](assets/NLP_Regex.png)
+
+#### Email Service (Nodemailer)
+![Nodemailer](assets/Nodemailer.png)
+
+---
+
+### Additional Screenshot
+![Additional](assets/Screenshot%202026-05-03%2010580.png)
+--------------------
 ## Contact
 For queries contact : sambadkhatiwada939@gmail.com
